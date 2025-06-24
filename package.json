@@ -1,0 +1,42 @@
+{
+  "name": "jadupc_store_backend",
+  "version": "0.5.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node app.ts",
+    "dev": "ts-node-dev --respawn app.ts",
+    "dev:nodemon": "nodemon --watch './**/*.ts' --exec 'ts-node' app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "typeorm-ts-node-commonjs migration:generate -d ./configs/ormconfig.ts",
+    "migration:run": "typeorm-ts-node-commonjs migration:run -d ./configs/ormconfig.ts",
+    "migration:revert": "npm run typeorm -- migration:revert -d ./configs/ormconfig.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.16.2",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.25"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^24.0.3",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  }
+}
